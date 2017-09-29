@@ -8093,6 +8093,10 @@
 		overflow-x: hidden;
 	}
 
+		#wrapper > section:nth-of-type(even) {
+			background: #fafafa;
+		}
+
 		#wrapper > .invert {
 			background-color: #000000;
 			color: #ffffff;
