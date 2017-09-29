@@ -3405,12 +3405,12 @@
 
 			@media screen and (orientation: portrait) {
 
-				.banner.style1.fullscreen .content {
-					min-height: 50vh;
+				.banner.style1.fullscreen .image {
+					height: 70vh;
 				}
 
-				.banner.style1.fullscreen .image {
-					height: 50vh;
+				.banner.style1.fullscreen .content {
+					min-height: 45vh;
 				}
 
 			}
@@ -7055,6 +7055,7 @@
 		margin: 0 auto;
 		max-width: 100%;
 		width: 64rem;
+
 	}
 
 		.wrapper.style1 > .inner.medium {
