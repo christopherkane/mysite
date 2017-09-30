@@ -1,128 +1,126 @@
 {% load staticfiles %}
 <!DOCTYPE HTML>
-<!--
-	Story by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
+
 	<head>
-		<title>Story by HTML5 UP</title>
+		<title>Chris Kane</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{% static 'pages/assets/css/main.css' %}" />
 	</head>
+
 	<body>
 
 		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
+		<div id="wrapper" class="divided">
 
-				<!-- Banner -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-						<div class="content">
-							<p>
-								<i>Hey, I'm</i>
-							</p>
-							<h1>Chris Kane</h1>
-							<p>A software engineer with a little more than software to talk about, and a few lessons I would rather not forget. Blah Blah blah, some more text to fill out this area of the banner.<p>
+			<!-- Banner -->
+			<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+				<div class="content">
+					<p>
+						<i>Hey, I'm</i>
+					</p>
+					<h1>Chris Kane</h1>
+					<p>A software engineer with a little more than software to talk about, and a few lessons I would rather not forget. Blah Blah blah, some more text to fill out this area of the banner.<p>
+				</div>
+				<div class="image">
+					<img src="{% static 'pages/images/banner.jpg' %}" alt="" />
+				</div>
+			</section>
+
+			<!-- Ongoing Work -->
+			<section class="wrapper style1 align-center gray">
+				<div class="inner">
+					<h2>Ongoing Work</h2>
+					<p>An insight into my current projects, endeavours, articles, and adventures.</p>
+					<div class="items style3 medium onload-fade-in">
+						<section>
+							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
+							<h3>Qwiz</h3>
+							<p>An open source quiz engine; tailor-made quizes crafted by none other than you, and shared with your family and friends (and in-laws). </p>
+						</section>
+						<section>
+							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
+							<h3>My personal website</h3>
+							<p>This static, personal website. Powered by Django. Why? Because its always a good idea to include batteries.</p>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			<!-- Recent Work -->
+			<section class="wrapper style1 align-center">
+				<div class="inner">
+					<h2>Recent Work</h2>
+					<p>A treasure trove of recent projects, and articles.</p>
+					<div class="items style3 medium onload-fade-in">
+						<section>
+							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
+							<h3>Un</h3>
+							<p>The quick brown fox jumped over the lazy dog.</p>
+						</section>
+						<section>
+							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
+							<h3>Deux</h3>
+							<p>The sick brown fox bumped into the lazy hog.</p>
+						</section>
+						<section>
+							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic03.jpg' %}" alt="" /></a>
+							<h3>Trois</h3>
+							<p>The slick brown trout jumped into the crazy fog.</p>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			<!-- Seven -->
+			<section class="wrapper style1 align-center">
+				<div class="inner medium">
+					<h2>Get in touch</h2>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" value="" />
 						</div>
-						<div class="image">
-							<img src="{% static 'pages/images/banner.jpg' %}" alt="" />
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" value="" />
 						</div>
-					</section>
-
-					<!-- Ongoing Work -->
-					<section class="wrapper style1 align-center gray">
-						<div class="inner">
-							<h2>Ongoing Work</h2>
-							<p>An insight into my current projects, endeavours, articles, and adventures.</p>
-							<div class="items style3 medium onload-fade-in">
-								<section>
-									<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
-									<h3>Qwiz</h3>
-									<p>An open source quiz engine; tailor-made quizes crafted by none other than you, and shared with your family and friends (and in-laws). </p>
-								</section>
-								<section>
-									<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
-									<h3>My personal website</h3>
-									<p>This static, personal website. Powered by Django. Why? Because its always a good idea to include batteries.</p>
-								</section>
-							</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
 						</div>
-					</section>
+						<ul class="actions">
+							<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
 
-					<!-- Recent Work -->
-					<section class="wrapper style1 align-center">
-						<div class="inner">
-							<h2>Recent Work</h2>
-							<p>A treasure trove of recent projects, and articles.</p>
-							<div class="items style3 medium onload-fade-in">
-								<section>
-									<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
-									<h3>Un</h3>
-									<p>The quick brown fox jumped over the lazy dog.</p>
-								</section>
-								<section>
-									<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
-									<h3>Deux</h3>
-									<p>The sick brown fox bumped into the lazy hog.</p>
-								</section>
-								<section>
-									<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic03.jpg' %}" alt="" /></a>
-									<h3>Trois</h3>
-									<p>The slick brown trout jumped into the crazy fog.</p>
-								</section>
-							</div>
-						</div>
-					</section>
-
-				<!-- Seven -->
-					<section class="wrapper style1 align-center">
-						<div class="inner medium">
-							<h2>Get in touch</h2>
-							<form method="post" action="#">
-								<div class="field half first">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" value="" />
-								</div>
-								<div class="field half">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" value="" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="6"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-
-						</div>
-					</section>
-
-				<!-- Footer -->
-					<footer class="wrapper style1 align-center">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://www.github.com/christopherkane" class="icon style2 fa-github"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.instagram.com/khriscane/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://www.linkedin.com/in/christopher-kane-413259148/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="mailto:chris@chriskane.xyz" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<p>&copy; Christopher Kane 2017. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="{% static 'pages/assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'pages/assets/js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'pages/assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'pages/assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'pages/assets/js/util.js' %}"></script>
-			<script src="{% static 'pages/assets/js/main.js' %}"></script>
+		</div>
 
 	</body>
+
+	<!-- Footer -->
+	<footer class="wrapper style1 align-center">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://www.github.com/christopherkane" class="icon style2 fa-github"><span class="label">Twitter</span></a></li>
+				<li><a href="https://www.instagram.com/khriscane/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.linkedin.com/in/christopher-kane-413259148/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:chris@chriskane.xyz" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p>&copy; Christopher Kane 2017. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="{% static 'pages/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/skel.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/util.js' %}"></script>
+	<script src="{% static 'pages/assets/js/main.js' %}"></script>
+
 </html>
