@@ -1,123 +1,79 @@
+{% extends 'pages/base.html' %}
+
 {% load staticfiles %}
-<!DOCTYPE HTML>
 
-<html>
+{# Override defaults in base template #}
+{% block banner_prelim %}Hey, I'm{% endblock banner_prelim %}
+{% block banner_header %}Chris Kane{% endblock banner_header %}
+{% block banner_postlim %}A coffee fuelled adventurer, photographer, reader, globetrotter, and software developer based in Belfast, Northern Ireland.{% endblock banner_postlim %}
+{% block banner_image %}{% static 'pages/images/banner.jpg' %}{% endblock banner_image %}
 
-	<head>
-		<title>Chris Kane</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="{% static 'pages/assets/css/main.css' %}" />
-		<link rel="icon" href="{% static 'favicon.ico' %}">
-	</head>
+{# Provide page content, completing base template extension #}
+{% block content %}
 
-	<body>
+    {# Ongoing Work #}
+    <section class="wrapper style1 align-center gray">
+        <div class="inner">
+            <h2>Ongoing Work</h2>
+            <p>An insight into my current projects, endeavours, articles, and adventures.</p>
+            <div class="items style3 medium onload-fade-in">
+                <section>
+                    <a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
+                    <h3>Qwiz</h3>
+                    <p>An open source quiz engine powered by Angular, Django and Heroku. Craft quizes with a personal touch for your family and friends (and in-laws).</p>
+                </section>
+                <section>
+                    <a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
+                    <h3>My personal website</h3>
+                    <p>My simple static personal website, powered by Django. Why? Batteries are included! And who says this website will remain simple and static? With a wealth of high quality third party batteries, this website has room to grow.</p>
+                </section>
+            </div>
+        </div>
+    </section>
 
-		<!-- Wrapper -->
-		<div id="wrapper" class="divided">
+    {# Recent Work #}
+    <section class="wrapper style1 align-center">
+        <div class="inner">
+            <h2>Recent Work</h2>
+            <p>A treasure trove of recent projects, and articles.</p>
+            <div class="items style3 medium onload-fade-in">
+                <section>
+                    <a href="https://play.google.com/store/apps/details?id=com.candycane.spacepenguin" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
+                    <h3>Space Penguin</h3>
+                    <p>A tough-as-nails side-scrolling Android game. Crafted with libGDX, in Java, with a generous helping of TLC.</p>
+                </section>
+                <section>
+                    <a href="http://pure.qub.ac.uk/portal/files/13871005/OperationCheckpoint.pdf" class="image fit icon fa-sitemap"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
+                    <h3>Operation Checkpoint</h3>
+                    <p>My thesis. This publication proproses, and demonstrates, and approach to secure the northbound interface in a Software Defined Network.</p>
+                </section>
+            </div>
+        </div>
+    </section>
 
-			<!-- Banner -->
-			<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-				<div class="content">
-					<p>
-						<i>Hey, I'm</i>
-					</p>
-					<h1>Chris Kane</h1>
-					<p>A coffee fuelled adventurer, photographer, reader, globetrotter, and software developer based in Belfast, Northern Ireland.</p>
-				</div>
-				<div class="image">
-					<img src="{% static 'pages/images/banner.jpg' %}" alt="" />
-				</div>
-			</section>
+    {# Get in touch #}
+    <section class="wrapper style1 align-center">
+        <div class="inner medium">
+            <h2>Get in touch</h2>
+            <form method="post" action="#">
+                {% csrf_token %}
+                <div class="field half first">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="" />
+                </div>
+                <div class="field half">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="" />
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="6"></textarea>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+                </ul>
+            </form>
+        </div>
+    </section>
 
-			<!-- Ongoing Work -->
-			<section class="wrapper style1 align-center gray">
-				<div class="inner">
-					<h2>Ongoing Work</h2>
-					<p>An insight into my current projects, endeavours, articles, and adventures.</p>
-					<div class="items style3 medium onload-fade-in">
-						<section>
-							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
-							<h3>Qwiz</h3>
-							<p>An open source quiz engine powered by Angular, Django and Heroku.
-							Craft quizes with a personal touch for your family and friends (and in-laws). </p>
-						</section>
-						<section>
-							<a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
-							<h3>My personal website</h3>
-							<p>My simple static personal website, powered by Django. Why? Batteries are included! And who says this website will remain simple and static? With a wealth of high quality third party batteries, this website has room to grow.</p>
-						</section>
-					</div>
-				</div>
-			</section>
-
-			<!-- Recent Work -->
-			<section class="wrapper style1 align-center">
-				<div class="inner">
-					<h2>Recent Work</h2>
-					<p>A treasure trove of recent projects, and articles.</p>
-					<div class="items style3 medium onload-fade-in">
-						<section>
-							<a href="https://play.google.com/store/apps/details?id=com.candycane.spacepenguin" class="image fit icon fa-code"><img src="{% static 'pages/images/pic01.jpg' %}" alt="" /></a>
-							<h3>Space Penguin</h3>
-							<p>A tough-as-nails side-scrolling Android game. Crafted with libGDX, in Java, with a generous helping of TLC.</p>
-						</section>
-						<section>
-							<a href="http://pure.qub.ac.uk/portal/files/13871005/OperationCheckpoint.pdf" class="image fit icon fa-sitemap"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
-							<h3>Operation Checkpoint</h3>
-							<p>My thesis. This publication proproses, and demonstrates, and approach to secure the northbound interface in a Software Defined Network.</p>
-						</section>
-					</div>
-				</div>
-			</section>
-
-			<!-- Seven -->
-			<section class="wrapper style1 align-center">
-				<div class="inner medium">
-					<h2>Get in touch</h2>
-					<form method="post" action="#">
-						<div class="field half first">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" value="" />
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" value="" />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6"></textarea>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
-						</ul>
-					</form>
-				</div>
-			</section>
-
-		</div>
-
-	</body>
-
-	<!-- Footer -->
-	<footer class="wrapper style1 align-center">
-		<div class="inner">
-			<ul class="icons">
-				<li><a href="https://www.github.com/christopherkane" class="icon style2 fa-github"><span class="label">Twitter</span></a></li>
-				<li><a href="https://www.instagram.com/khriscane/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://www.linkedin.com/in/christopher-kane-413259148/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				<li><a href="mailto:chris@chriskane.xyz" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-			<p>&copy; Christopher Kane 2017. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="{% static 'pages/assets/js/jquery.min.js' %}"></script>
-	<script src="{% static 'pages/assets/js/jquery.scrollex.min.js' %}"></script>
-	<script src="{% static 'pages/assets/js/jquery.scrolly.min.js' %}"></script>
-	<script src="{% static 'pages/assets/js/skel.min.js' %}"></script>
-	<script src="{% static 'pages/assets/js/util.js' %}"></script>
-	<script src="{% static 'pages/assets/js/main.js' %}"></script>
-
-</html>
+{% endblock content %}

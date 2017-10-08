@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+
+<html>
+
+    {# Header #}
+	<head>
+		<title>{% block title %} Chris Kane {% endblock title %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'pages/assets/css/main.css' %}" />
+		<link rel="icon" href="{% static 'favicon.ico' %}">
+	</head>
+
+	<body>
+
+        {# Wrapper #}
+		<div id="wrapper" class="divided">
+
+            {# Banner #}
+            <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+				<div class="content">
+					<p>
+						<i>{% block banner_prelim %}{% endblock banner_prelim %}</i>
+					</p>
+					<h1>{% block banner_header %}{% endblock banner_header %}</h1>
+					<p>{% block banner_postlim %}{% endblock banner_postlim %}</p>
+				</div>
+				<div class="image">
+					<img src="{% block banner_image %}{% endblock banner_image %}" alt="" />
+				</div>
+			</section>
+
+            {# Content #}
+            {% block content %}
+                This is the modifiable content block in its vanilla form.
+                This will be replaced by all templates that extend this base template.
+                If you see this, somebody has been silly!
+            {% endblock content %}
+
+		</div>
+
+	</body>
+
+    {# Footer #}
+	<footer class="wrapper style1 align-center">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://www.github.com/christopherkane" class="icon style2 fa-github"><span class="label">Twitter</span></a></li>
+				<li><a href="https://www.instagram.com/khriscane/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.linkedin.com/in/christopher-kane-413259148/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:chris@chriskane.xyz" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p>&copy; Christopher Kane 2017. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</div>
+	</footer>
+
+    {# Scripts #}
+	<script src="{% static 'pages/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/skel.min.js' %}"></script>
+	<script src="{% static 'pages/assets/js/util.js' %}"></script>
+	<script src="{% static 'pages/assets/js/main.js' %}"></script>
+
+</html>
