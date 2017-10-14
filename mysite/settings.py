@@ -33,9 +33,11 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'django.contrib.staticfiles',
+    'django.contrib.sessions',
 ]
 
 MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -59,6 +61,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+# Store sessions in a file
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+
+# Use pickle serializer for serializing and de-serializing Python objects
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

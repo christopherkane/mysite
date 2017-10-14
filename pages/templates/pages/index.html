@@ -24,7 +24,7 @@
                 </section>
                 <section>
                     <a href="#" class="image fit icon fa-code"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
-                    <h3>My personal website</h3>
+                    <h3>My Personal Website</h3>
                     <p>My simple static personal website, powered by Django. Why? Batteries are included! And who says this website will remain simple and static? With a wealth of high quality third party batteries, this website has room to grow.</p>
                 </section>
             </div>
@@ -45,29 +45,38 @@
                 <section>
                     <a href="http://pure.qub.ac.uk/portal/files/13871005/OperationCheckpoint.pdf" class="image fit icon fa-sitemap"><img src="{% static 'pages/images/pic02.jpg' %}" alt="" /></a>
                     <h3>Operation Checkpoint</h3>
-                    <p>My thesis. This publication proproses, and demonstrates, and approach to secure the northbound interface in a Software Defined Network.</p>
+                    <p>My thesis. This publication proproses, and demonstrates, an approach to secure the northbound interface in a Software Defined Network.</p>
                 </section>
             </div>
         </div>
     </section>
 
     {# Get in touch #}
-    <section class="wrapper style1 align-center">
+    <section class="wrapper style1 align-center" id="contact">
         <div class="inner medium">
             <h2>Get in touch</h2>
-            <form method="post" action="#">
+            <form method="post" action="{% url 'pages:contact' %}">
                 {% csrf_token %}
                 <div class="field half first">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" value="" />
+                    {{ form.contact_name }}
+                    {% for error in form.contact_name.errors %}
+                        <p class="error"><i>{{ error }}</i></p>
+                    {% endfor %}
                 </div>
                 <div class="field half">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value="" />
+                    {{ form.contact_email }}
+                    {% for error in form.contact_email.errors %}
+                        <p class="error"><i>{{ error }}</i></p>
+                    {% endfor %}
                 </div>
                 <div class="field">
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" rows="6"></textarea>
+                    {{ form.content }}
+                    {% for error in form.content.errors %}
+                        <p class="error"><i>{{ error }}</i></p>
+                    {% endfor %}
                 </div>
                 <ul class="actions">
                     <li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
