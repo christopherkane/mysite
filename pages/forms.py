@@ -2,6 +2,9 @@ from django import forms
 from django.core.validators import MaxLengthValidator, RegexValidator
 from django.core.mail import send_mail
 from django.template.loader import get_template
+from django.conf import settings
+from smtplib import SMTPException
+import logging
 
 # our new form
 class ContactForm(forms.Form):
@@ -43,10 +46,14 @@ class ContactForm(forms.Form):
             'form_content': form_content,
         })
 
-        send_mail(
-            'You\'ve got mail',
-            content,
-            'donotreply@chriskane.xyz',
-            ['chris@chriskane.xyz'],
-            fail_silently=False,
-        )
+        try:
+            send_mail(
+                'You\'ve got mail',
+                content,
+                settings.SERVER_EMAIL,
+                [a[1] for a in settings.ADMINS],
+                fail_silently=False,
+            )
+        except SMTPException as e:
+            logger = logging.getLogger(__name__)
+            logger.error('Failed to send email: {}\n{}'.format(e, content))
