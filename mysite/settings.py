@@ -67,6 +67,13 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 # Use pickle serializer for serializing and de-serializing Python objects
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
+# Email settings
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
