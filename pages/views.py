@@ -20,6 +20,7 @@ def contact(request):
         # If valid, send as email
         if form.is_valid():
             form.send_email()
+            return HttpResponseRedirect(reverse('pages:thanks'))
         else:
             # Add form message to be used in next request
             request.session['invalid_form'] = form

@@ -17,20 +17,6 @@
         {# Wrapper #}
 		<div id="wrapper" class="divided">
 
-            {# Banner #}
-            <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-				<div class="content">
-					<p>
-						<i>{% block banner_prelim %}{% endblock banner_prelim %}</i>
-					</p>
-					<h1>{% block banner_header %}{% endblock banner_header %}</h1>
-					<p>{% block banner_postlim %}{% endblock banner_postlim %}</p>
-				</div>
-				<div class="image">
-					<img src="{% block banner_image %}{% endblock banner_image %}" alt="" />
-				</div>
-			</section>
-
             {# Content #}
             {% block content %}
                 This is the modifiable content block in its vanilla form.
@@ -43,7 +29,7 @@
 	</body>
 
     {# Footer #}
-	<footer class="wrapper style1 align-center">
+	<footer class="wrapper style1 align-center" id="footer">
 		<div class="inner">
 			<ul class="icons">
 				<li><a href="https://www.github.com/christopherkane" class="icon style2 fa-github"><span class="label">Twitter</span></a></li>

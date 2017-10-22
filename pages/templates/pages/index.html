@@ -2,14 +2,22 @@
 
 {% load staticfiles %}
 
-{# Override defaults in base template #}
-{% block banner_prelim %}Hey, I'm{% endblock banner_prelim %}
-{% block banner_header %}Chris Kane{% endblock banner_header %}
-{% block banner_postlim %}A coffee fuelled adventurer, photographer, reader, globetrotter, and software developer based in Belfast, Northern Ireland.{% endblock banner_postlim %}
-{% block banner_image %}{% static 'pages/images/fulls/me.jpg' %}{% endblock banner_image %}
-
 {# Provide page content, completing base template extension #}
 {% block content %}
+
+    {# Banner #}
+    <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+            <p>
+                <i>Hey, I'm</i>
+            </p>
+            <h1>Chris Kane</h1>
+            <p>A coffee fuelled adventurer, photographer, reader, globetrotter, and software developer based in Belfast, Northern Ireland.</p>
+        </div>
+        <div class="image">
+            <img src="{% static 'pages/images/fulls/me.jpg' %}" alt="" />
+        </div>
+    </section>
 
     {# Ongoing Work #}
     <section class="wrapper style1 align-center gray">

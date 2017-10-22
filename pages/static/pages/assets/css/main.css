@@ -3517,6 +3517,7 @@
 			top: 0;
 			left: 0;
 			border-radius: 0;
+			margin: 0 0 0 0;
 		}
 
 			.banner.style2 .image img {
@@ -3680,6 +3681,7 @@
 			height: 21rem;
 			border-radius: 100%;
 			margin: 0 3.5rem 2rem 0;
+			margin: 0 0 0 0;
 		}
 
 			.banner.style3 .image img {
@@ -3875,6 +3877,7 @@
 			margin-top: 2.5rem;
 			margin-bottom: 5rem;
 			margin-right: 3.5rem;
+			margin: 0 0 0 0;
 		}
 
 			.banner.style4 .image img {
@@ -4128,6 +4131,7 @@
 			left: 0;
 			border-radius: 0;
 			opacity: 0.5;
+			margin: 0 0 0 0;
 		}
 
 			.banner.style5 .image img {
