@@ -1,0 +1,23 @@
+{% extends 'pages/base.html' %}
+
+{% load staticfiles %}
+
+{# Provide page content, completing base template extension #}
+{% block content %}
+
+    {# Banner #}
+    <section class="banner style5 invert orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+            <h1>Oops!</h1>
+            <p>It looks like you may have taken a wrong turn (or somebody messed up).</p>
+            <p>
+                <a href="#footer" class="smooth-scroll-middle">Click Here</a>
+                for inspiration on your next stop.
+            </p>
+        </div>
+        <div class="image">
+            <img src="{% static 'pages/images/fulls/cuba.jpg' %}" alt="" />
+        </div>
+    </section>
+
+{% endblock content %}
