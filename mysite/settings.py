@@ -23,11 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SUPER_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.chriskane.xyz']
 
 ADMINS = [('Chris Kane', 'chris@chriskane.xyz')]
+MANAGERS = [('Chris Kane', 'chris@chriskane.xyz')]
 
 # Application definition
 
@@ -76,6 +77,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 SERVER_EMAIL = 'donotreply@chriskane.xyz'
+DEFAULT_FROM_EMAIL = 'donotreply@chriskane.xyz'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
